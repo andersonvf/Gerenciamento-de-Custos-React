@@ -1,9 +1,10 @@
 //import Router from 'json-server/lib/server/router';
-import {BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import Home from './components/pages/Home'
-import Company from './components/pages/Company'
-import Contact from './components/pages/Contact'
-import NewProject from './components/pages/NewProject'
+import React from 'react'
+import {BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom'
+import Home from './Home'
+import Company from './Company'
+import Contact from './Contact'
+import NewProject from './NewProject'
 
 
 function App() {
@@ -13,17 +14,14 @@ function App() {
 
   return (
     <Router>
-      <ul>
-        <li>Home</li>
-        <li>Contato</li>
-        <li>Contato</li>
-      </ul>
+      <div>
+        <Link to='/'>Home</Link>
+        <Link to='/contact'>Contato</Link>
+        <Link to='/company'>Empresa</Link>
+        <Link to='/newproject'>Novo Projeto</Link>
+      </div>
       <Routes>
-          <Route path='/' element={
-                <>
-                  <Home />
-                </>
-              }/>
+          <Route path="/" element={<Home />}/>
                           
           <Route path='/company' element={
                 <>
